@@ -50,6 +50,7 @@ impl TcpChannel {
         state: ChannelState,
         own_addr: SocketAddr,
     ) -> Self {
+    	stream.set_nodelay(true);
         let input_buffer = DecodeBuffer::new(buffer_chunk);
         TcpChannel {
             stream,
