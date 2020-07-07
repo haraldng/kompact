@@ -50,7 +50,7 @@ impl TcpChannel {
         state: ChannelState,
         own_addr: SocketAddr,
     ) -> Self {
-    	stream.set_nodelay(true);
+    	stream.set_nodelay(true).expect("Failed to turn off Nagle's algorithm");
         let input_buffer = DecodeBuffer::new(buffer_chunk);
         TcpChannel {
             stream,
