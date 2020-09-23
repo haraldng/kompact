@@ -112,6 +112,7 @@ pub type Never = std::convert::Infallible;
 /// To get all kompact related things into scope import as `use kompact::prelude::*`.
 pub mod prelude {
     pub use slog::{crit, debug, error, info, o, trace, warn, Drain, Fuse, Logger};
+    pub use slog_async::Async;
 
     pub use std::{
         any::Any,
